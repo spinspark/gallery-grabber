@@ -24,7 +24,7 @@ struct Args {
 fn parse_url(url: &str) -> Result<Url, String> {
     let mut url = String::from(url);
     if !url.starts_with("http://") && !url.starts_with("https://") {
-        url = format!("https://{}", url);
+        url = format!("https://{url}");
     }
     if !url.ends_with('/') {
         url.push('/');
